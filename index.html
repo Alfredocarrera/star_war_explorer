@@ -1,41 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Star War Explorer </title>
 </head>
+
 <body>
-    
+
     <header>
         <div id="imagen_sup">
             <img src="#" id="logo">
         </div>
-        <div id = "barra_navegacion">
+        <div id="barra_navegacion">
             <nav id="barra">
-            <tr>
-                <th><button class = "indice">PERSONAJE</button></th>
-                <th><button class = "indice">PLANETS</button></th>
-                <th><button class = "indice">PEOPLE</button></th>
-                <th><button class = "indice">VEHICLES</button></th>
-                <th><button class = "indice">SPECIES</button></th>
-                <th><button class = "indice">FILMS</button></th>
-            </tr>
+                <tr>
+                    <th><button class="indice">PERSONAJE</button></th>
+                    <th><button class="indice">PLANETS</button></th>
+                    <th><button class="indice">PEOPLE</button></th>
+                    <th><button class="indice">VEHICLES</button></th>
+                    <th><button class="indice">SPECIES</button></th>
+                    <th><button class="indice">FILMS</button></th>
+                </tr>
             </nav>
         </div>
-        <div id ="buscador">
-            <input id="dato_busqueda"> 
+        <div id="buscador">
+            <input id="dato_busqueda">
             <button id="buscar">search</button>
         </div>
     </header>
     <main>
-        <div id="datos_opciones">
-            <div id="card_info">
-                <img class="datos" src="#">
-                <h2 class="titulo_dato"> </h2>
-                
-            </div>
-        </div>
+        <section class="film-container">
+            <article class="film-card">
+
+                <div class="film-media">
+                    <img src="https://via.placeholder.com/600x300?text=A+New+Hope" alt="A New Hope - Poster">
+                </div>
+
+                <!--Elemento Título -->
+                <header>
+                    <h1>A New Hope <small>(Episodio IV)</small></h1>
+                </header>
+
+                <!-- Lista de elementos -->
+                <ul class="film-details">
+                    <li><strong>Director:</strong> George Lucas</li>
+                    <li><strong>Productor:</strong> Gary Kurtz, Rick McCallum</li>
+                    <li><strong>Fecha de lanzamiento:</strong> 1977-05-25</li>
+                    <li><strong>Texto de apertura:</strong> It is a period of civil war. Rebel spaceships, striking from
+                        a hidden base...</li>
+                    <li><strong>Personajes incluidos:</strong> 18</li>
+                    <li><strong>Planetas:</strong> 3</li>
+                    <li><strong>Naves:</strong> 8</li>
+                    <li><strong>Vehículos:</strong> 4</li>
+                    <li><strong>Especies:</strong> 5</li>
+                </ul>
+
+            </article>
+        </section>
+
     </main>
 </body>
+
 </html>
