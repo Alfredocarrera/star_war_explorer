@@ -5,20 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Star War Explorer </title>
-    <link rel="stylesheet" href="./css/style.css"> 
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
 
     <header class="header">
         <div class="nav-container">
-            
+
             <a href="#" class="logo">STAR <span>WARS</span></a>
 
             <!-- Control del Menú Hamburguesa (sin JavaScript) -->
             <input type="checkbox" id="menu-toggle" class="menu-checkbox">
             <label for="menu-toggle" class="hamburger" aria-label="Abrir menú">
-               <img src="./icono/logo hamburguesa.png" alt="Menú Clone Trooper" class="helmet-icon">
+                <img src="./icono/logo hamburguesa.png" alt="Menú Clone Trooper" class="helmet-icon">
             </label>
 
             <!-- Menú de navegación semántico -->
@@ -38,7 +38,7 @@
             <input type="text" id="dato_busqueda" placeholder="Buscar en la galaxia...">
             <button id="buscar">Buscar</button>
         </div>
-    </header>    
+    </header>
     <main class="main-content">
 
         <!-- Grid de películas -->
@@ -48,96 +48,113 @@
             <article class="film-card">
                 <div class="film-media">
                     <img src="https://via.placeholder.com/600x300?text=A+New+Hope" alt="A New Hope - Poster">
+                    <div class="media-overlay">
+                        <span>Ver detalles ▼</span>
+                    </div>
                 </div>
 
                 <header>
                     <h1>A New Hope <small>(Episodio IV)</small></h1>
                 </header>
 
-                <ul class="film-details">
-                    <li><strong>Director:</strong> George Lucas</li>
-                    <li><strong>Productor:</strong> Gary Kurtz, Rick McCallum</li>
-                    <li><strong>Fecha de lanzamiento:</strong> 1977-05-25</li>
-                    <li><strong>Texto de apertura:</strong> It is a period of civil war. Rebel spaceships...</li>
-                    <li><strong>Personajes incluidos:</strong> 18</li>
-                    <li><strong>Planetas:</strong> 3</li>
-                    <li><strong>Naves:</strong> 8</li>
-                    <li><strong>Vehículos:</strong> 4</li>
-                    <li><strong>Especies:</strong> 5</li>
-                </ul>
+                <div class="film-details-wrapper">
+                    <ul class="film-details">
+                        <li><strong>Director:</strong> George Lucas</li>
+                        <li><strong>Productor:</strong> Gary Kurtz, Rick McCallum</li>
+                        <li><strong>Fecha de lanzamiento:</strong> 1977-05-25</li>
+                        <li><strong>Texto de apertura:</strong> It is a period of civil war. Rebel spaceships...</li>
+                        <li><strong>Personajes incluidos:</strong> 18</li>
+                        <li><strong>Planetas:</strong> 3</li>
+                        <li><strong>Naves:</strong> 8</li>
+                        <li><strong>Vehículos:</strong> 4</li>
+                        <li><strong>Especies:</strong> 5</li>
+                    </ul>
+                </div>
             </article>
 
             <!-- Tarjeta 2 -->
             <article class="film-card">
                 <div class="film-media">
-                    <img src="https://via.placeholder.com/600x300?text=The+Empire+Strikes+Back" alt="The Empire Strikes Back - Poster">
+                    <img src="https://via.placeholder.com/600x300?text=A+New+Hope" alt="A New Hope - Poster">
+                    <div class="media-overlay">
+                        <span>Ver detalles ▼</span>
+                    </div>
                 </div>
 
                 <header>
-                    <h1>The Empire Strikes Back <small>(Episodio V)</small></h1>
+                    <h1>A New Hope <small>(Episodio IV)</small></h1>
                 </header>
 
-                <ul class="film-details">
-                    <li><strong>Director:</strong> Irvin Kershner</li>
-                    <li><strong>Productor:</strong> Gary Kurtz</li>
-                    <li><strong>Fecha de lanzamiento:</strong> 1980-05-21</li>
-                    <li><strong>Texto de apertura:</strong> It is a dark time for the Rebellion...</li>
-                    <li><strong>Personajes incluidos:</strong> 16</li>
-                    <li><strong>Planetas:</strong> 4</li>
-                    <li><strong>Naves:</strong> 9</li>
-                    <li><strong>Vehículos:</strong> 6</li>
-                    <li><strong>Especies:</strong> 5</li>
-                </ul>
+                <div class="film-details-wrapper">
+                    <ul class="film-details">
+                        <li><strong>Director:</strong> George Lucas</li>
+                        <li><strong>Productor:</strong> Gary Kurtz, Rick McCallum</li>
+                        <li><strong>Fecha de lanzamiento:</strong> 1977-05-25</li>
+                        <li><strong>Texto de apertura:</strong> It is a period of civil war. Rebel spaceships...</li>
+                        <li><strong>Personajes incluidos:</strong> 18</li>
+                        <li><strong>Planetas:</strong> 3</li>
+                        <li><strong>Naves:</strong> 8</li>
+                        <li><strong>Vehículos:</strong> 4</li>
+                        <li><strong>Especies:</strong> 5</li>
+                    </ul>
+                </div>
             </article>
 
             <!-- Tarjeta 3 -->
             <article class="film-card">
                 <div class="film-media">
-                    <img src="https://via.placeholder.com/600x300?text=Return+of+the+Jedi" alt="Return of the Jedi - Poster">
+                    <img src="https://via.placeholder.com/600x300?text=A+New+Hope" alt="A New Hope - Poster">
+                    <div class="media-overlay">
+                        <span>Ver detalles ▼</span>
+                    </div>
                 </div>
 
                 <header>
-                    <h1>Return of the Jedi <small>(Episodio VI)</small></h1>
+                    <h1>A New Hope <small>(Episodio IV)</small></h1>
                 </header>
 
-                <ul class="film-details">
-                    <li><strong>Director:</strong> Richard Marquand</li>
-                    <li><strong>Productor:</strong> Howard G. Kazanjian</li>
-                    <li><strong>Fecha de lanzamiento:</strong> 1983-05-25</li>
-                    <li><strong>Texto de apertura:</strong> Luke Skywalker has returned to his home planet...</li>
-                    <li><strong>Personajes incluidos:</strong> 20</li>
-                    <li><strong>Planetas:</strong> 5</li>
-                    <li><strong>Naves:</strong> 10</li>
-                    <li><strong>Vehículos:</strong> 8</li>
-                    <li><strong>Especies:</strong> 9</li>
-                </ul>
+                <div class="film-details-wrapper">
+                    <ul class="film-details">
+                        <li><strong>Director:</strong> George Lucas</li>
+                        <li><strong>Productor:</strong> Gary Kurtz, Rick McCallum</li>
+                        <li><strong>Fecha de lanzamiento:</strong> 1977-05-25</li>
+                        <li><strong>Texto de apertura:</strong> It is a period of civil war. Rebel spaceships...</li>
+                        <li><strong>Personajes incluidos:</strong> 18</li>
+                        <li><strong>Planetas:</strong> 3</li>
+                        <li><strong>Naves:</strong> 8</li>
+                        <li><strong>Vehículos:</strong> 4</li>
+                        <li><strong>Especies:</strong> 5</li>
+                    </ul>
+                </div>
             </article>
 
             <!-- Tarjeta 4 -->
             <article class="film-card">
                 <div class="film-media">
-                    <img src="https://via.placeholder.com/600x300?text=The+Phantom+Menace" alt="The Phantom Menace - Poster">
+                    <img src="https://via.placeholder.com/600x300?text=A+New+Hope" alt="A New Hope - Poster">
+                    <div class="media-overlay">
+                        <span>Ver detalles ▼</span>
+                    </div>
                 </div>
 
                 <header>
-                    <h1>The Phantom Menace <small>(Episodio I)</small></h1>
+                    <h1>A New Hope <small>(Episodio IV)</small></h1>
                 </header>
 
-                <ul class="film-details">
-                    <li><strong>Director:</strong> George Lucas</li>
-                    <li><strong>Productor:</strong> Rick McCallum</li>
-                    <li><strong>Fecha de lanzamiento:</strong> 1999-05-19</li>
-                    <li><strong>Texto de apertura:</strong> Turmoil has engulfed the Galactic Republic...</li>
-                    <li><strong>Personajes incluidos:</strong> 34</li>
-                    <li><strong>Planetas:</strong> 3</li>
-                    <li><strong>Naves:</strong> 5</li>
-                    <li><strong>Vehículos:</strong> 7</li>
-                    <li><strong>Especies:</strong> 20</li>
-                </ul>
+                <div class="film-details-wrapper">
+                    <ul class="film-details">
+                        <li><strong>Director:</strong> George Lucas</li>
+                        <li><strong>Productor:</strong> Gary Kurtz, Rick McCallum</li>
+                        <li><strong>Fecha de lanzamiento:</strong> 1977-05-25</li>
+                        <li><strong>Texto de apertura:</strong> It is a period of civil war. Rebel spaceships...</li>
+                        <li><strong>Personajes incluidos:</strong> 18</li>
+                        <li><strong>Planetas:</strong> 3</li>
+                        <li><strong>Naves:</strong> 8</li>
+                        <li><strong>Vehículos:</strong> 4</li>
+                        <li><strong>Especies:</strong> 5</li>
+                    </ul>
+                </div>
             </article>
-
-        </section>
-
     </main>
 </body>
 
