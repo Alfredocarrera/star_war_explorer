@@ -344,3 +344,72 @@ body {
         background-color: rgba(255, 232, 31, 0.15);
     }
 }
+
+/* ACCION DE TARJETAS (SOBRE DESPLEGABLE) */
+
+.film-card {
+  cursor: pointer;
+  position: relative;
+  align-self: start; /* Evita que la tarjeta estire las otras en la misma fila */
+}
+
+.film-media {
+  position: relative;
+}
+
+/* Indicador flotante sobre la imagen */
+.media-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.5rem;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.85;
+  transition: opacity 0.3s ease;
+}
+
+.media-overlay span {
+  color: var(--yellow-starwars);
+  font-size: 0.85rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.film-card:hover .media-overlay {
+  opacity: 1;
+}
+
+/* Ocultar detalles por defecto usando Grid Template Rows para animación fluida */
+.film-details-wrapper {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.film-details-wrapper .film-details {
+  min-height: 0;
+  padding: 0 1.2rem;
+  opacity: 0;
+  transition: opacity 0.3s ease, padding 0.3s ease;
+}
+
+/* Estado Expandido / Activo */
+.film-card.active .film-details-wrapper {
+  grid-template-rows: 1fr;
+}
+
+.film-card.active .film-details-wrapper .film-details {
+  opacity: 1;
+  padding: 0.8rem 1.2rem 1.5rem 1.2rem;
+}
+
+/* Rotación del indicador al abrir */
+.film-card.active .media-overlay span {
+  content: "Ocultar ▲";
+}
