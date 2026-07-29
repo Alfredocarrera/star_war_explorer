@@ -23,4 +23,6 @@ cabecera.appendChild(tarjeta);
 // cargando al contenedor body del archivo index.html
 document.body.appendChild(cabecera);
 
-
+const barraNav = document.createElement('div');
+barraNav.classList.add('barranav');
+const lista = document.createElement
