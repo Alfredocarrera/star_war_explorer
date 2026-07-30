@@ -19,22 +19,34 @@ function mostrarCargando() {
   `;
 }
 
-// 2. Función genérica para obtener datos según el recurso ('films', 'people', etc.)
+// 2. Función para obtener datos según el recurso ('films', 'people', etc.)
+// Función auxiliar para crear la retraso en el tiempo de llegada de informacion
+const esperar = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
+// 2. Función genérica para obtener datos con retraso visual de 3 segundos
 async function cargarRecurso(recurso) {
     recursoActual = recurso;
-    mostrarCargando();
+    mostrarCargando(); // Muestra las tarjetas skeleton inmediatamente
 
     try {
-        const respuesta = await fetch(`${BASE_URL}/${recurso}`);
+        // Ejecutamos en paralelo la petición a la API y el temporizador de 3000ms (3 segundos)
+        const [respuesta] = await Promise.all([
+            fetch(`${BASE_URL}/${recurso}`),
+            esperar(3000) // 3000 milisegundos = 3 segundos
+        ]);
+
         if (!respuesta.ok) throw new Error(`Error en la API: ${respuesta.status}`);
 
         datosActuales = await respuesta.json();
+
+        // Una vez pasados los 3 segundos y obtenidos los datos, renderizamos
         renderizarDatos(datosActuales, recurso);
     } catch (error) {
         console.error('Error al cargar datos:', error);
         container.innerHTML = `<p class="error-msg">Error al cargar ${recurso}. Revisa tu conexión.</p>`;
     }
 }
+
 
 // 3. Plantilla flexible según el tipo de información
 function crearContenidoTarjeta(item, recurso) {
