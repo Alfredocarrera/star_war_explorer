@@ -343,3 +343,55 @@ body {
         border-radius: 4px;
     }
 }
+
+/* ESTILOS Y ANIMACIÓN PARA LA BARRA DE CARGA TIPO SKELETON */
+
+/* Tarjeta base en estado de carga */
+.film-card.skeleton {
+    min-height: 200px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+    pointer-events: none; /* Evita que el usuario haga clic mientras carga */
+}
+
+/* Elementos internos del skeleton (Título y párrafos) */
+.skeleton-title,
+.skeleton-text {
+    background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.05) 25%,
+        rgba(255, 255, 255, 0.15) 50%,
+        rgba(255, 255, 255, 0.05) 75%
+    );
+    background-size: 200% 100%;
+    animation: loading-shimmer 1.5s infinite;
+    border-radius: 4px;
+}
+
+/* Dimensiones específicas */
+.skeleton-title {
+    height: 24px;
+    width: 60%;
+    margin-bottom: 1rem;
+}
+
+.skeleton-text {
+    height: 14px;
+    width: 100%;
+    margin-bottom: 0.6rem;
+}
+
+/* Hace que la última línea sea más corta para simular texto real */
+.skeleton-text:last-child {
+    width: 80%;
+}
+
+/* Animación de brillo deslizante (Shimmer) */
+@keyframes loading-shimmer {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
