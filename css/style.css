@@ -1,3 +1,9 @@
+/* CURSOR PERSONALIZADO (NAVE STAR WARS) jua jua esta vivo si funciona */
+
+html, body, a, button, input, .film-card, label {  /* Aplica el cursor de nave en toda la pantalla */
+    cursor: url('../icono/nave-espacial.png') 16 2,pointer !important;
+}
+
 /* 1. RESET GLOBAL Y BUENAS PRÁCTICAS */
 *,
 *::before,
@@ -396,13 +402,19 @@ body {
 /* Transición rápida e intensa de Blanco Puro -> Negro */
 @keyframes parpadeo-extremo {
     0% {
-        background-color: #ffffff; /* Blanco puro 100% */
-        box-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff; /* Resplandor intenso */
+        background-color: #ffffff;
+        /* Blanco puro 100% */
+        box-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff;
+        /* Resplandor intenso */
     }
+
     100% {
-        background-color: #050505; /* Negro casi puro */
-        box-shadow: 0 0 0px transparent; /* Sin luz */
-        border: 1px solid #333; /* Borde sutil para que no desaparezca del todo */
+        background-color: #050505;
+        /* Negro casi puro */
+        box-shadow: 0 0 0px transparent;
+        /* Sin luz */
+        border: 1px solid #333;
+        /* Borde sutil para que no desaparezca del todo */
     }
 }
 
@@ -411,6 +423,7 @@ body {
     0% {
         border-color: rgba(255, 255, 255, 0.4);
     }
+
     100% {
         border-color: #1a1a1a;
     }
@@ -426,12 +439,14 @@ body {
     padding: 1.2rem;
     cursor: pointer;
     transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
-    user-select: none; /* Evita seleccionar texto accidentalmente al hacer clic */
+    user-select: none;
+    /* Evita seleccionar texto accidentalmente al hacer clic */
 }
 
 /* Efecto al pasar el cursor (Hover) */
 .film-card:hover {
-    border-color: #ffe81f; /* Amarillo característico de Star Wars */
+    border-color: #ffe81f;
+    /* Amarillo característico de Star Wars */
     transform: translateY(-2px);
 }
 
@@ -461,6 +476,7 @@ body {
         opacity: 0;
         transform: translateY(-5px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
