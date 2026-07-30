@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Star War Explorer </title>
+    <title>Star Wars Explorer</title>
+    <!-- Asegúrate de que la ruta coincida con tu carpeta CSS -->
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
@@ -15,155 +16,63 @@
 
             <a href="#" class="logo">STAR <span>WARS</span></a>
 
-            <!-- Control del Menú Hamburguesa (sin JavaScript) -->
+            <!-- Control del Menú Hamburguesa -->
             <input type="checkbox" id="menu-toggle" class="menu-checkbox">
             <label for="menu-toggle" class="hamburger" aria-label="Abrir menú">
                 <img src="./icono/logo hamburguesa.png" alt="Menú Clone Trooper" class="helmet-icon">
             </label>
 
-            <!-- Menú de navegación semántico -->
+            <!-- Menú de navegación (hermano directo del checkbox) -->
             <ul class="nav-links">
-                <li><a href="#">Personajes</a></li>
-                <li><a href="#">Planetas</a></li>
-                <li><a href="#">Naves</a></li>
-                <li><a href="#">Vehículos</a></li>
-                <li><a href="#">Especies</a></li>
-                <li><a href="#">Películas</a></li>
+                <li><a href="#" data-recurso="films" class="nav-link active">Películas</a></li>
+                <li><a href="#" data-recurso="people" class="nav-link">Personajes</a></li>
+                <li><a href="#" data-recurso="planets" class="nav-link">Planetas</a></li>
+                <li><a href="#" data-recurso="starships" class="nav-link">Naves</a></li>
+                <li><a href="#" data-recurso="species" class="nav-link">Especies</a></li>
+                <li><a href="#" data-recurso="vehicles" class="nav-link">Vehículos</a></li>
             </ul>
 
-        </div>
+        </div> <!-- Fin de nav-container -->
 
         <!-- Buscador general -->
         <div id="buscador" class="search-container">
             <input type="text" id="dato_busqueda" placeholder="Buscar en la galaxia...">
             <button id="buscar">Buscar</button>
         </div>
-    </header>
+    </header> <!-- Cierre del header arreglado -->
+
     <main class="main-content">
 
-        <!-- Grid de películas -->
+        <!-- Contenedor dinámico donde JavaScript renderizará los datos -->
         <section class="film-container">
 
-            <!-- Tarjeta 1 -->
-            <article class="film-card">
-                <div class="film-media">
-                    <img src="https://via.placeholder.com/600x300?text=A+New+Hope" alt="A New Hope - Poster">
-                    <div class="media-overlay">
-                        <span>Ver detalles ▼</span>
-                    </div>
-                </div>
-
-                <header>
-                    <h1>A New Hope <small>(Episodio IV)</small></h1>
-                </header>
-
-                <div class="film-details-wrapper">
-                    <ul class="film-details">
-                        <li><strong>Director:</strong> George Lucas</li>
-                        <li><strong>Productor:</strong> Gary Kurtz, Rick McCallum</li>
-                        <li><strong>Fecha de lanzamiento:</strong> 1977-05-25</li>
-                        <li><strong>Texto de apertura:</strong> It is a period of civil war. Rebel spaceships...</li>
-                        <li><strong>Personajes incluidos:</strong> 18</li>
-                        <li><strong>Planetas:</strong> 3</li>
-                        <li><strong>Naves:</strong> 8</li>
-                        <li><strong>Vehículos:</strong> 4</li>
-                        <li><strong>Especies:</strong> 5</li>
-                    </ul>
-                </div>
-            </article>
-
-            <!-- Tarjeta 2 -->
-            <article class="film-card">
-                <div class="film-media">
-                    <img src="https://via.placeholder.com/600x300?text=A+New+Hope" alt="A New Hope - Poster">
-                    <div class="media-overlay">
-                        <span>Ver detalles ▼</span>
-                    </div>
-                </div>
-
-                <header>
-                    <h1>A New Hope <small>(Episodio IV)</small></h1>
-                </header>
-
-                <div class="film-details-wrapper">
-                    <ul class="film-details">
-                        <li><strong>Director:</strong> George Lucas</li>
-                        <li><strong>Productor:</strong> Gary Kurtz, Rick McCallum</li>
-                        <li><strong>Fecha de lanzamiento:</strong> 1977-05-25</li>
-                        <li><strong>Texto de apertura:</strong> It is a period of civil war. Rebel spaceships...</li>
-                        <li><strong>Personajes incluidos:</strong> 18</li>
-                        <li><strong>Planetas:</strong> 3</li>
-                        <li><strong>Naves:</strong> 8</li>
-                        <li><strong>Vehículos:</strong> 4</li>
-                        <li><strong>Especies:</strong> 5</li>
-                    </ul>
-                </div>
-            </article>
-
-            <!-- Tarjeta 3 -->
-            <article class="film-card">
-                <div class="film-media">
-                    <img src="https://via.placeholder.com/600x300?text=A+New+Hope" alt="A New Hope - Poster">
-                    <div class="media-overlay">
-                        <span>Ver detalles ▼</span>
-                    </div>
-                </div>
-
-                <header>
-                    <h1>A New Hope <small>(Episodio IV)</small></h1>
-                </header>
-
-                <div class="film-details-wrapper">
-                    <ul class="film-details">
-                        <li><strong>Director:</strong> George Lucas</li>
-                        <li><strong>Productor:</strong> Gary Kurtz, Rick McCallum</li>
-                        <li><strong>Fecha de lanzamiento:</strong> 1977-05-25</li>
-                        <li><strong>Texto de apertura:</strong> It is a period of civil war. Rebel spaceships...</li>
-                        <li><strong>Personajes incluidos:</strong> 18</li>
-                        <li><strong>Planetas:</strong> 3</li>
-                        <li><strong>Naves:</strong> 8</li>
-                        <li><strong>Vehículos:</strong> 4</li>
-                        <li><strong>Especies:</strong> 5</li>
-                    </ul>
-                </div>
-            </article>
-
-            <!-- Tarjeta 4 -->
-            <article class="film-card">
-                <div class="film-media">
-                    <img src="https://via.placeholder.com/600x300?text=A+New+Hope" alt="A New Hope - Poster">
-                    <div class="media-overlay">
-                        <span>Ver detalles ▼</span>
-                    </div>
-                </div>
-
-                <header>
-                    <h1>A New Hope <small>(Episodio IV)</small></h1>
-                </header>
-
-                <div class="film-details-wrapper">
-                    <ul class="film-details">
-                        <li><strong>Director:</strong> George Lucas</li>
-                        <li><strong>Productor:</strong> Gary Kurtz, Rick McCallum</li>
-                        <li><strong>Fecha de lanzamiento:</strong> 1977-05-25</li>
-                        <li><strong>Texto de apertura:</strong> It is a period of civil war. Rebel spaceships...</li>
-                        <li><strong>Personajes incluidos:</strong> 18</li>
-                        <li><strong>Planetas:</strong> 3</li>
-                        <li><strong>Naves:</strong> 8</li>
-                        <li><strong>Vehículos:</strong> 4</li>
-                        <li><strong>Especies:</strong> 5</li>
-                    </ul>
-                </div>
-            </article>
+            <!-- Skeleton inicial mientras carga la API -->
             <article class="skeleton">
                 <div class="skeleton-media"></div>
                 <div class="skeleton-title"></div>
                 <div class="skeleton-text"></div>
                 <div class="skeleton-text"></div>
             </article>
+
+            <article class="skeleton">
+                <div class="skeleton-media"></div>
+                <div class="skeleton-title"></div>
+                <div class="skeleton-text"></div>
+                <div class="skeleton-text"></div>
+            </article>
+
+            <article class="skeleton">
+                <div class="skeleton-media"></div>
+                <div class="skeleton-title"></div>
+                <div class="skeleton-text"></div>
+                <div class="skeleton-text"></div>
+            </article>
+
         </section>
     </main>
-    <script src="./js/logica.js"></script>
+
+    <!-- Conexión con JavaScript (cambia la ruta si tu archivo está en la raíz) -->
+    <script src="./js/coneccionApi.js"></script>
 </body>
 
 </html>
