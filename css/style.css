@@ -16,23 +16,15 @@ html {
 :root {
     /* Colores principales */
     --bg-space: #0b0c10;
-    /* Negro profundo espacial */
     --bg-header: #12141d;
-    /* Oscuro metálico para la cabecera */
     --bg-card: #1f2833;
-    /* Gris nave espacial */
     --border-color: #333d47;
-    /* Borde de contenedor */
 
     /* Colores de texto y acentos */
     --yellow-starwars: #ffe81f;
-    /* Amarillo icónico Star Wars */
     --blue-lightsaber: #45a29e;
-    /* Azul turquesa sable de luz */
     --text-main: #c5c6c7;
-    /* Gris claro legible */
     --text-title: #ffffff;
-    /* Blanco puro */
 
     /* Efectos y tipografía */
     --font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
@@ -111,18 +103,16 @@ body {
     transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-/* Efecto Hover: Brillo mas intenso */
 .hamburger:hover .helmet-icon {
-  transform: scale(1.1);
-  filter: drop-shadow(0 0 10px rgba(255, 232, 31, 0.9));
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 10px rgba(255, 232, 31, 0.9));
 }
 
-/* Animación al hacer clic / abrir el menú: Rotación leve */
-.menu-checkbox:checked ~ .hamburger .helmet-icon {
-  transform: rotate(180deg) scale(1.1);
+.menu-checkbox:checked~.hamburger .helmet-icon {
+    transform: rotate(180deg) scale(1.1);
 }
 
-/* Menú desplegable para telefono y Tablet */
+/* Menú desplegable para Teléfono y Tablet (Móvil) */
 .nav-links {
     list-style: none;
     display: flex;
@@ -142,7 +132,9 @@ body {
     text-align: center;
 }
 
-.nav-links a {
+/* Estilos de los enlaces de navegación */
+.nav-links a,
+.nav-link {
     display: block;
     padding: 0.8rem 1rem;
     color: var(--text-main);
@@ -151,15 +143,20 @@ body {
     text-transform: uppercase;
     letter-spacing: 1px;
     transition: var(--transition);
+    border-bottom: 2px solid transparent;
 }
 
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-link:hover,
+.nav-link.active {
     color: var(--yellow-starwars);
     background-color: rgba(255, 232, 31, 0.1);
+    border-bottom-color: var(--yellow-starwars);
 }
 
+/* Despliegue del menú hamburguesa al presionar el icono */
 .menu-checkbox:checked~.nav-links {
-    max-height: 350px;
+    max-height: 400px;
     padding: 0.5rem 0;
 }
 
@@ -207,7 +204,7 @@ body {
     box-shadow: var(--glow-yellow);
 }
 
-/* 4. SECCIÓN PRINCIPAL Y GRID DINÁMICO (FILM-CONTAINER) */
+/* 4. SECCIÓN PRINCIPAL Y GRID DINÁMICO */
 .main-content {
     max-width: 1200px;
     margin: 2rem auto;
@@ -223,7 +220,7 @@ body {
     gap: 2rem;
 }
 
-/* 5. TARJETAS DE PELÍCULAS (FILM-CARD) */
+/* 5. TARJETAS DE PELÍCULAS Y ELEMENTOS SWAPI */
 .film-card {
     background-color: var(--bg-card);
     border: 1px solid var(--border-color);
@@ -233,6 +230,9 @@ body {
     transition: var(--transition);
     display: flex;
     flex-direction: column;
+    cursor: pointer;
+    position: relative;
+    align-self: start;
 }
 
 .film-card:hover {
@@ -241,8 +241,52 @@ body {
     box-shadow: 0 10px 25px rgba(255, 232, 31, 0.2);
 }
 
-/* Elemento destacado 1: Imagen */
+/* Encabezados y Badges dinámicos */
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem;
+    gap: 1rem;
+}
+
+.card-header h3 {
+    color: var(--yellow-starwars);
+    font-size: 1.25rem;
+}
+
+.badge {
+    background-color: #1f2833;
+    color: var(--blue-lightsaber);
+    border: 1px solid var(--blue-lightsaber);
+    padding: 0.25rem 0.6rem;
+    font-size: 0.85rem;
+    border-radius: 12px;
+    text-transform: capitalize;
+    white-space: nowrap;
+}
+
+.card-details {
+    padding: 0 1.2rem 1.2rem 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.card-details p {
+    font-size: 0.9rem;
+    color: var(--text-main);
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.08);
+    padding-bottom: 0.4rem;
+}
+
+.card-details p strong {
+    color: var(--text-title);
+}
+
+/* Media Overlay / Imágenes si aplica */
 .film-media {
+    position: relative;
     width: 100%;
     height: 200px;
     overflow: hidden;
@@ -260,51 +304,7 @@ body {
     transform: scale(1.05);
 }
 
-/* Elemento destacado 2: Título */
-.film-card header {
-    padding: 1.2rem 1.2rem 0.4rem 1.2rem;
-}
-
-.film-card h1 {
-    color: var(--yellow-starwars);
-    font-size: 1.35rem;
-    line-height: 1.3;
-}
-
-.film-card h1 small {
-    display: block;
-    font-size: 0.85rem;
-    color: var(--blue-lightsaber);
-    margin-top: 0.2rem;
-    font-weight: normal;
-}
-
-/* Lista de detalles */
-.film-details {
-    list-style: none;
-    padding: 0.8rem 1.2rem 1.5rem 1.2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.film-details li {
-    font-size: 0.9rem;
-    color: var(--text-main);
-    border-bottom: 1px dashed rgba(255, 255, 255, 0.08);
-    padding-bottom: 0.4rem;
-}
-
-.film-details li:last-child {
-    border-bottom: none;
-}
-
-.film-details li strong {
-    color: var(--text-title);
-    margin-right: 0.3rem;
-}
-
-/*6. MEDIA QUERIES (RESPONSIVE TABLET Y COMPUTADOR) */
+/* 6. MEDIA QUERIES (RESPONSIVE TABLET Y COMPUTADOR) */
 
 /* TABLET (desde 600px en adelante): Grid de 2 Columnas */
 @media (min-width: 600px) {
@@ -313,7 +313,7 @@ body {
     }
 }
 
-/* pantalla de computadora de escritorio: Grid de 3 Columnas y Menú Horizontal */
+/* ESCRITORIO (desde 992px): Grid de 3 Columnas y Menú Horizontal */
 @media (min-width: 992px) {
     .film-container {
         grid-template-columns: repeat(3, 1fr);
@@ -333,85 +333,13 @@ body {
         background-color: transparent;
         border-bottom: none;
         gap: 1rem;
+        padding: 0;
     }
 
-    .nav-links a {
+    .nav-links a,
+    .nav-link {
+        display: inline-block;
         padding: 0.4rem 0.8rem;
         border-radius: 4px;
     }
-
-    .nav-links a:hover {
-        background-color: rgba(255, 232, 31, 0.15);
-    }
 }
-
-/* ACCION DE TARJETAS (SOBRE DESPLEGABLE) */
-
-.film-card {
-  cursor: pointer;
-  position: relative;
-  align-self: start; /* Evita que la tarjeta estire las otras en la misma fila */
-}
-
-.film-media {
-  position: relative;
-}
-
-/* Indicador flotante sobre la imagen */
-.media-overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 0.5rem;
-  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 0.85;
-  transition: opacity 0.3s ease;
-}
-
-.media-overlay span {
-  color: var(--yellow-starwars);
-  font-size: 0.85rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.film-card:hover .media-overlay {
-  opacity: 1;
-}
-
-/* Ocultar detalles por defecto usando Grid Template Rows para animación fluida */
-.film-details-wrapper {
-  display: grid;
-  grid-template-rows: 0fr;
-  transition: grid-template-rows 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  overflow: hidden;
-}
-
-.film-details-wrapper .film-details {
-  min-height: 0;
-  padding: 0 1.2rem;
-  opacity: 0;
-  transition: opacity 0.3s ease, padding 0.3s ease;
-}
-
-/* Estado Expandido / Activo */
-.film-card.active .film-details-wrapper {
-  grid-template-rows: 1fr;
-}
-
-.film-card.active .film-details-wrapper .film-details {
-  opacity: 1;
-  padding: 0.8rem 1.2rem 1.5rem 1.2rem;
-}
-
-/* Rotación del indicador al abrir */
-.film-card.active .media-overlay span {
-  content: "Ocultar ▲";
-}
-
-/* --- Estilos para el Skeleton --- */
