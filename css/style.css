@@ -346,52 +346,72 @@ body {
 
 /* ESTILOS Y ANIMACIÓN PARA LA BARRA DE CARGA TIPO SKELETON */
 
-/* Tarjeta base en estado de carga */
-.film-card.skeleton {
-    min-height: 200px;
-    background-color: rgba(255, 255, 255, 0.05);
-    border-color: rgba(255, 255, 255, 0.1);
-    pointer-events: none; /* Evita que el usuario haga clic mientras carga */
+/* Grid ajustado para tarjetas pequeñas */
+.film-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1rem;
+    padding: 1.5rem 1rem;
+    width: 100%;
 }
 
-/* Elementos internos del skeleton (Título y párrafos) */
+/* Tarjeta de carga que también parpadea suavemente */
+.film-card.skeleton {
+    display: block !important;
+    min-height: 110px;
+    padding: 1rem;
+    background: #0d0d0d;
+    border: 1px solid #222;
+    border-radius: 8px;
+    box-sizing: border-box;
+    pointer-events: none;
+    animation: pulso-fondo-tarjeta 1.2s infinite alternate ease-in-out;
+}
+
+/* Barras de texto con parpadeo blanco/negro de ALTO contraste */
 .skeleton-title,
 .skeleton-text {
-    background: linear-gradient(
-        90deg,
-        rgba(255, 255, 255, 0.05) 25%,
-        rgba(255, 255, 255, 0.15) 50%,
-        rgba(255, 255, 255, 0.05) 75%
-    );
-    background-size: 200% 100%;
-    animation: loading-shimmer 1.5s infinite;
+    display: block !important;
     border-radius: 4px;
+    animation: parpadeo-extremo 0.8s infinite alternate ease-in-out;
 }
 
-/* Dimensiones específicas */
+/* Dimensiones reducidas */
 .skeleton-title {
-    height: 24px;
-    width: 60%;
-    margin-bottom: 1rem;
+    height: 16px;
+    width: 65%;
+    margin-bottom: 0.8rem;
 }
 
 .skeleton-text {
-    height: 14px;
+    height: 10px;
     width: 100%;
-    margin-bottom: 0.6rem;
+    margin-bottom: 0.5rem;
 }
 
-/* Hace que la última línea sea más corta para simular texto real */
 .skeleton-text:last-child {
-    width: 80%;
+    width: 45%;
 }
 
-/* Animación de brillo deslizante (Shimmer) */
-@keyframes loading-shimmer {
+/* Transición rápida e intensa de Blanco Puro -> Negro */
+@keyframes parpadeo-extremo {
     0% {
-        background-position: 200% 0;
+        background-color: #ffffff; /* Blanco puro 100% */
+        box-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff; /* Resplandor intenso */
     }
     100% {
-        background-position: -200% 0;
+        background-color: #050505; /* Negro casi puro */
+        box-shadow: 0 0 0px transparent; /* Sin luz */
+        border: 1px solid #333; /* Borde sutil para que no desaparezca del todo */
+    }
+}
+
+/* Fondo de la tarjeta acompanando el parpadeo */
+@keyframes pulso-fondo-tarjeta {
+    0% {
+        border-color: rgba(255, 255, 255, 0.4);
+    }
+    100% {
+        border-color: #1a1a1a;
     }
 }
