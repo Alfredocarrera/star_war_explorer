@@ -31,18 +31,21 @@ El proyecto cuenta con un diseño totalmente *responsive*, animaciones de carga 
 ```text
 star-wars-explorer/
 │
+├── css/
+│   └── styles.css            # Hoja de estilos principal
+|
 ├── icono/
 │   └── nave-espacial.png     # Cursor personalizado
 │
-├── css/
-│   └── styles.css            # Hoja de estilos principal
-│
 ├── js/
 │   └── coneccionApi.js       # Lógica de la aplicación y Fetch API
-│
+|
+├──img                        # carpeta de imagenes
+|              
+|
 ├── index.html                # Estructura principal
 └── README.md                 # Documentación del proyecto
-
+```
 📦 Instalación y Uso Local
 
     Clona el repositorio:
