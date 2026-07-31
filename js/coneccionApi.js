@@ -23,7 +23,7 @@ function mostrarCargando() {
 // Función auxiliar para crear la retraso en el tiempo de llegada de informacion
 const esperar = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
-// 2. Función genérica para obtener datos con retraso visual de 3 segundos
+// 2. Función para obtener datos con retraso visual de 3 segundos
 async function cargarRecurso(recurso) {
     recursoActual = recurso;
     mostrarCargando(); // Muestra las tarjetas skeleton inmediatamente
