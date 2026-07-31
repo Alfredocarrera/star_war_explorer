@@ -18,7 +18,7 @@ html {
     scroll-behavior: smooth;
 }
 
-/* 2. PALETA DE COLORES Y VARIABLES (STAR WARS THEME) */
+/* 2. PALETA DE COLORES Y VARIABLES (STAR WARS TEMA) */
 :root {
     /* Colores principales */
     --bg-space: #0b0c10;
@@ -238,7 +238,8 @@ body {
     flex-direction: column;
     cursor: pointer;
     position: relative;
-    align-self: start;
+    align-self: stretch;
+    height: 100%;
 }
 
 .film-card:hover {
@@ -269,7 +270,10 @@ body {
     font-size: 0.85rem;
     border-radius: 12px;
     text-transform: capitalize;
-    white-space: nowrap;
+    white-space: normal;
+    overflow-wrap: break-word;
+    min-width: 0;
+    display: inline-block;
 }
 
 .card-details {
@@ -322,7 +326,7 @@ body {
 /* ESCRITORIO (desde 992px): Grid de 3 Columnas y Menú Horizontal */
 @media (min-width: 992px) {
     .film-container {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3, 1fr); 
     }
 
     /* Ocultar botón hamburguesa */
@@ -353,13 +357,13 @@ body {
 /* ESTILOS Y ANIMACIÓN PARA LA BARRA DE CARGA TIPO SKELETON */
 
 /* Grid ajustado para tarjetas pequeñas */
-.film-container {
+/*.film-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 1rem;
     padding: 1.5rem 1rem;
     width: 100%;
-}
+}*/
 
 /* Tarjeta de carga que también parpadea suavemente */
 .film-card.skeleton {
